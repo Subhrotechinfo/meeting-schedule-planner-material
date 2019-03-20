@@ -1,17 +1,11 @@
-.sidenav-container {
-  height: 100%;
+.flex{
+  flex: 1 1 auto;
+}
+.options{
+  outline:none;
 }
 
-.sidenav {
-  width: 200px;
-}
 
-.sidenav .mat-toolbar {
-  background: inherit;
-}
 
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
+
+

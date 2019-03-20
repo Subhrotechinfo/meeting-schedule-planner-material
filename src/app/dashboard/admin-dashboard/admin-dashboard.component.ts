@@ -6,9 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-  view:String = 'month';
-  viewDate: Date = new Date();
-
   
   constructor() { }
 

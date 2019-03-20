@@ -1,20 +1,11 @@
-.example-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .example-container > * {
-    width: 100%;
-  }
-  
-  form{
-    width: auto;
-    margin: 20px auto 0;
-  } 
+.container{
+  width:auto;
+}
+.loginbox{
+  margin-top: 22vh;
+}
 
-  .mat-form-field{
-    width: 100%;
-  } 
-
-
-
+.field{
+  width: 100%;
+  min-width: 250px;
+} 

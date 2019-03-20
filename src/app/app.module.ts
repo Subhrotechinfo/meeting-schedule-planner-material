@@ -8,7 +8,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import { SignupComponent } from './signup/signup.component';
-// import { RouterModule } from '@angular/router';
+
 import { AppRouterModule } from './app-routing.module';
 import {
   MatButtonModule, 
@@ -18,8 +18,9 @@ import {
   MatOptionModule, 
   MatIconModule, 
   MatToolbarModule, 
-  MatSidenavModule, 
   MatListModule } from '@angular/material';
+import {MatMenuModule} from '@angular/material/menu';
+
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { MainnavComponent } from './mainnav/mainnav.component';
@@ -31,6 +32,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,7 @@ import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashb
     MainnavComponent,
     UserDashboardComponent,
     AdminDashboardComponent,
+    PagenotfoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,8 +60,8 @@ import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashb
     MatIconModule,
     LayoutModule,
     MatToolbarModule,
-    MatSidenavModule,
     MatListModule,
+    MatMenuModule,
     NgbModalModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
