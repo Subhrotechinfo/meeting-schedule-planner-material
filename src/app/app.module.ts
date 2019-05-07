@@ -11,13 +11,13 @@ import { SignupComponent } from './signup/signup.component';
 
 import { AppRouterModule } from './app-routing.module';
 import {
-  MatButtonModule, 
-  MatCheckboxModule, 
-  MatInputModule, 
-  MatSelectModule, 
-  MatOptionModule, 
-  MatIconModule, 
-  MatToolbarModule, 
+  MatButtonModule,
+  MatCheckboxModule,
+  MatInputModule,
+  MatSelectModule,
+  MatOptionModule,
+  MatIconModule,
+  MatToolbarModule,
   MatListModule } from '@angular/material';
 import {MatMenuModule} from '@angular/material/menu';
 

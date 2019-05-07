@@ -11,7 +11,7 @@ const appRoutes: Routes = [
     {path:'', component: LoginFormComponent},
     {path: 'login', component: LoginFormComponent},
     {path: 'signup', component: SignupComponent},
-    {path: 'dashboard/adminUser', component: MainnavComponent},
+    {path: 'dashboard/adminUser', component: AdminDashboardComponent},
     {path: 'dashboard/user', component: UserDashboardComponent},
     {path:'pagenotfound', component: PagenotfoundComponent},
     {path: '**', redirectTo: '/pagenotfound'},

@@ -34,7 +34,9 @@
     "rrule": "^2.6.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.3",
-    "zone.js": "~0.8.26"
+    "zone.js": "~0.8.26",
+    "angular-draggable-droppable": "4.3.0",
+    "angular-resizable-element": "3.2.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0",
