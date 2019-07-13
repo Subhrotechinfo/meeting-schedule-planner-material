@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatCardModule} from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 import { SignupComponent } from './signup/signup.component';
 
 import { AppRouterModule } from './app-routing.module';
@@ -18,8 +18,9 @@ import {
   MatOptionModule,
   MatIconModule,
   MatToolbarModule,
-  MatListModule } from '@angular/material';
-import {MatMenuModule} from '@angular/material/menu';
+  MatListModule
+} from '@angular/material';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
@@ -33,6 +34,9 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { UserListComponent } from './dashboard/admin-dashboard/user-list/user-list.component';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +47,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     UserDashboardComponent,
     AdminDashboardComponent,
     PagenotfoundComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +55,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     ReactiveFormsModule,
     AppRouterModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatButtonModule,
     MatCheckboxModule,
     MatFormFieldModule,
@@ -72,6 +78,4 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
-
-
+export class AppModule {}
