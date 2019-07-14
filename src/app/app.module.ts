@@ -1,4 +1,3 @@
-import { AppService } from './app-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -35,6 +34,7 @@ import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboar
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { MeetingModule } from './meeting/meeting.module';
+import { AppService } from './app-service.service';
 
 @NgModule({
   declarations: [
