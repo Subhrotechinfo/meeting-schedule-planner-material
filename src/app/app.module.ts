@@ -75,5 +75,3 @@ import { AppService } from './app-service.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-

@@ -181,8 +181,18 @@ export class AdminDashboardComponent {
     this.events = this.events.filter(event => event !== eventToDelete);
   }
 
-  setView(view: CalendarView) {
-    this.view = view;
+  setView(view) {
+    switch (view.target.value) {
+      case 'Month':
+        this.view = CalendarView.Month;
+        break;
+      case 'Week':
+        this.view = CalendarView.Week;
+        break;
+      case 'Day':
+        this.view = CalendarView.Day;
+        break;
+    }
   }
 
   closeOpenMonthViewDay() {
