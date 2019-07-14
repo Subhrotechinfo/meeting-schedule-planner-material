@@ -34,6 +34,11 @@ import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboar
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { MeetingModule } from './meeting/meeting.module';
+
+import { SharedModule } from './shared/shared.module';
+
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppService } from './app-service.service';
 
 @NgModule({
