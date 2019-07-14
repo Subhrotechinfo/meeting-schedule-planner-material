@@ -1,4 +1,3 @@
-
 import {
   Component,
   ChangeDetectionStrategy,
@@ -40,7 +39,6 @@ const colors: any = {
 };
 
 @Component({
-
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -70,7 +68,7 @@ export class AdminDashboardComponent {
     {
       label: '<i class="fa fa-fw fa-times"></i>',
       onClick: ({ event }: { event: CalendarEvent }): void => {
-        this.events = this.events.filter(iEvent => iEvent !== event);
+        this.events = this.events.filter((iEvent) => iEvent !== event);
         this.handleEvent('Deleted', event);
       }
     }
@@ -119,7 +117,7 @@ export class AdminDashboardComponent {
     }
   ];
 
-  activeDayIsOpen: boolean = true;
+  activeDayIsOpen = true;
 
   constructor(private modal: NgbModal) {}
 
@@ -142,7 +140,7 @@ export class AdminDashboardComponent {
     newStart,
     newEnd
   }: CalendarEventTimesChangedEvent): void {
-    this.events = this.events.map(iEvent => {
+    this.events = this.events.map((iEvent) => {
       if (iEvent === event) {
         return {
           ...event,
@@ -178,40 +176,14 @@ export class AdminDashboardComponent {
   }
 
   deleteEvent(eventToDelete: CalendarEvent) {
-    this.events = this.events.filter(event => event !== eventToDelete);
+    this.events = this.events.filter((event) => event !== eventToDelete);
   }
 
-  setView(view) {
-    switch (view.target.value) {
-      case 'Month':
-        this.view = CalendarView.Month;
-        break;
-      case 'Week':
-        this.view = CalendarView.Week;
-        break;
-      case 'Day':
-        this.view = CalendarView.Day;
-        break;
-    }
+  setView(view: CalendarView) {
+    this.view = view;
   }
 
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
   }
 }
-
-
-
-// @Component({
-//   selector: 'app-admin-dashboard',
-//   templateUrl: './admin-dashboard.component.html',
-//   styleUrls: ['./admin-dashboard.component.css']
-// })
-// export class AdminDashboardComponent implements OnInit {
-
-//   constructor() { }
-
-//   ngOnInit() {
-//   }
-
-// }
