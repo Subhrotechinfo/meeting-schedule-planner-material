@@ -1,55 +1,66 @@
 <div class="container-fluid">
     <div class="col-sm-12 col-md-8 col-lg-6 mx-auto">
         <mat-card>
-          <form>
+          <form [formGroup]="signUpForm" (submit)="saveSignUp()">
               <div class="form-group">
                   <mat-form-field class="field">
-                    <input matInput placeholder="Full Name" type="text">
+                    <input matInput placeholder="Full Name" type="text" formControlName ="fullName">
+                    <!-- <mat-error></mat-error> -->
                   </mat-form-field>
               </div>
               <div class="form-group">
                   <mat-form-field class="field">
-                      <input matInput placeholder="Email id" type="email">
+                      <input matInput placeholder="Email id" type="email" formControlName = "emailId" 
+                      [errorStateMatcher]="Matcher">
+                      <!-- <mat-error *ngIf="signUpForm.hasError('required')"> Please enter an email id </mat-error> -->
+                      <!-- <mat-error *ngIf="!signUpform.email.hasError('required') && signUpform.email.hasError('email')"> Enter valid</mat-error> -->
                   </mat-form-field>
               </div>
               <div class="form-group">
                   <mat-form-field class="field">
-                      <input matInput placeholder="Username" type="text">
+                      <input matInput placeholder="Username" type="text" formControlName="userName">
                   </mat-form-field>
               </div>
               <div class="form-group">
                   <mat-form-field class="field">
-                      <input matInput placeholder="Enter your password" type="password">
+                      <input matInput placeholder="Enter your password" type="password" formControlName="password">
                       <!-- <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'false' : 'true'}}</mat-icon> -->
                   </mat-form-field>
               </div>
               <div class="form-group">
                   <mat-form-field class="field">
-                      <input matInput placeholder="Confirm password" type="password">
+                      <input matInput placeholder="Confirm password" type="password" formControlName="confirmpassword">
                       <!-- <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'false' : 'true'}}</mat-icon> -->
+                      <!-- <mat-error *ngIf="signUpForm.passwordMatch">Passwords must match</mat-error> -->
                   </mat-form-field>
               </div>
               <div class="form-group">
                   <mat-form-field>
-                      <mat-select [(value)]="selected">
-                        <mat-option>Country</mat-option>
-                        <mat-option value="option1">Country 1</mat-option>
-                        <mat-option value="option2">Country 2</mat-option>
-                        <mat-option value="option3">Country 3</mat-option>
+                      <mat-label>Country</mat-label>
+                      <mat-select formControlName="country">
+                        <mat-option>None</mat-option>
+                        <mat-option [value]="country" *ngFor="let country of countries">{{country}}</mat-option>
                       </mat-select>
                   </mat-form-field>
               </div>
               <div class="form-group">
                   <mat-form-field class="field">
                       <span matPrefix>+91 &nbsp;</span>
-                      <input type="tel" matInput placeholder="Phone">
+                      <input type="tel" matInput placeholder="Phone" formControlName="mobileno">
+                      <!-- <mat-error *ngIf="signUpForm.hasError('maxLength')"> Min-Max 10 digits</mat-error> -->
                       <!-- <mat-icon matSuffix>mode_edit</mat-icon> -->
                   </mat-form-field>
               </div>
               <div class="form-group">
-                  <mat-checkbox class="example-margin">Admin Priviledges</mat-checkbox>
+                  <mat-form-field>
+                      <mat-label>Role</mat-label>
+                      <mat-select formControlName="role">
+                          <mat-option>None</mat-option>
+                          <mat-option [value]="role" *ngFor="let role of roles">{{role}}</mat-option>
+                      </mat-select>
+                  </mat-form-field>
               </div>
-              <button mat-raised-button color="primary" >Signup</button>
+              <button mat-raised-button color="primary" type="submit">Signup</button>
           </form>
         </mat-card>
   </div>

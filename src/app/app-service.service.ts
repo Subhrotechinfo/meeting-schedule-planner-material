@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppService {
 
-  baseUrl: String= 'http://localhost:4200';
+  baseUrl: String= 'http://localhost:8080';
   constructor(private _http: HttpClient) { }
 
   // get all countries using api
@@ -14,10 +14,18 @@ export class AppService {
        return this._http.get(`https://api.printful.com/countries`);
   }
   
-  public signup(){
-    return 'Hello';
-    // return this._http.get(`${this.baseUrl}/hello`);
+  public signup(signUpData){
+    // const params = 
+    console.log(signUpData);
+    return this._http.post(`${this.baseUrl}/signup`,signUpData);
   }
+
+  public login(loginData){
+    console.log(loginData);
+    return this._http.post(`${this.baseUrl}/login`, loginData);
+  }
+
+
 
 }
 

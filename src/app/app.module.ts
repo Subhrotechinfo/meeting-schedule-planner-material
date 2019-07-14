@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 
 import { SignupComponent } from './signup/signup.component';
@@ -24,7 +24,7 @@ import {
 } from '@angular/material';
 import { MatMenuModule } from '@angular/material/menu';
 
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule, NgControl } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { FlatpickrModule } from 'angularx-flatpickr';
