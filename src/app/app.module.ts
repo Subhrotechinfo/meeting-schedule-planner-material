@@ -5,10 +5,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { LoginFormComponent } from './login-form/login-form.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
+
 
 import { SignupComponent } from './signup/signup.component';
 
@@ -21,8 +25,9 @@ import {
   MatOptionModule,
   MatIconModule,
   MatToolbarModule,
-  MatListModule } from '@angular/material';
-import {MatMenuModule} from '@angular/material/menu';
+  MatListModule
+} from '@angular/material';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -35,6 +40,9 @@ import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboar
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { MeetingModule } from './meeting/meeting.module';
+import { SharedModule } from './shared/shared.module';
+import { UserListComponent } from './dashboard/admin-dashboard/user-list/user-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,15 +51,19 @@ import { MeetingModule } from './meeting/meeting.module';
     SignupComponent,
     UserDashboardComponent,
     AdminDashboardComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRouterModule,
     MeetingModule,
     BrowserAnimationsModule,
+    SharedModule,
+    HttpClientModule,
     MatButtonModule,
     MatCheckboxModule,
     MatFormFieldModule,
@@ -71,9 +83,10 @@ import { MeetingModule } from './meeting/meeting.module';
       useFactory: adapterFactory
     })
   ],
+
+  exports: [SharedModule],
+  providers: [],
   providers: [AppService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
-
-
+export class AppModule {}

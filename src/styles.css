@@ -1,13 +1,62 @@
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/angular-calendar/css/angular-calendar.css";
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-body{
-    /* margin: 0; */
-    /* background-color:#0d0d0d; */
+@import '../node_modules/angular-calendar/css/angular-calendar.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+body {
+  /* margin: 0; */
+  /* background-color:#0d0d0d; */
 }
-
-
-
-
-
-
+.chat {
+  margin: 25px 150px;
+  border: 1px solid rgb(206, 198, 198);
+}
+.container {
+  background: #f9f0f0;
+  margin: auto;
+  border: 1px solid #d4c2c2;
+}
+.users {
+  padding: 15px;
+  min-height: 276px;
+  height: 560px;
+}
+.scroll-bar {
+  overflow-y: scroll;
+}
+.status-active {
+  color: rgb(80, 180, 80);
+}
+.status-inactive {
+  color: rgb(192, 47, 21);
+}
+.title {
+  padding: 20px;
+  background: #658298;
+  text-align: center;
+}
+.user {
+  padding: 12px;
+  background: white;
+  border: 1px solid #d0bebe;
+  cursor: pointer;
+}
+.user:hover {
+  background: #585050;
+  color: white;
+}
+input[type='text'] {
+  width: 100%;
+}
+.vr {
+  width: 10px;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 150px;
+}
+@media screen and (min-width: 350px) {
+  .chat {
+    margin: 25px;
+    border: 1px solid #cec6c6;
+  }
+}
