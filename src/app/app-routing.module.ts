@@ -5,7 +5,8 @@ import { SignupComponent } from './signup/signup.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboard.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { MainnavComponent } from './mainnav/mainnav.component';
+import { AddMeetingComponent } from './meeting/add-meeting/add-meeting.component';
+import { UpdateMeetingComponent } from './meeting/update-meeting/update-meeting.component';
 
 const appRoutes: Routes = [
     {path:'', component: LoginFormComponent},
@@ -13,6 +14,8 @@ const appRoutes: Routes = [
     {path: 'signup', component: SignupComponent},
     {path: 'dashboard/adminUser', component: AdminDashboardComponent},
     {path: 'dashboard/user', component: UserDashboardComponent},
+    {path:'meeting/addEvent', component: AddMeetingComponent},
+    {path:'meeting/updateEvent', component: UpdateMeetingComponent},
     {path:'pagenotfound', component: PagenotfoundComponent},
     {path: '**', redirectTo: '/pagenotfound'},
 

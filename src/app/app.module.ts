@@ -22,8 +22,6 @@ import {
 import {MatMenuModule} from '@angular/material/menu';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { FooterComponent } from './footer/footer.component';
-import { MainnavComponent } from './mainnav/mainnav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { FlatpickrModule } from 'angularx-flatpickr';
@@ -33,22 +31,23 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { MeetingModule } from './meeting/meeting.module';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
     SignupComponent,
-    FooterComponent,
-    MainnavComponent,
     UserDashboardComponent,
     AdminDashboardComponent,
-    PagenotfoundComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRouterModule,
+    MeetingModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
