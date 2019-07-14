@@ -1,0 +1,7 @@
+.user-div {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+.status {
+  font-size: 10px;
+}

@@ -1,16 +1,17 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-      <span class="flex"></span>
-          <button id="menu" mat-button [matMenuTriggerFor]="menu" class="options">Logout</button>
-          <mat-menu #menu="matMenu" >
-            <button mat-menu-item class="options">Item 1</button>
-            <button mat-menu-item class="options">Item 2</button>
-          </mat-menu>
+    <span class="flex"></span>
+    <button
+      id="menu"
+      mat-button
+      [matMenuTriggerFor]="menu"
+      class="options logout-button"
+    >
+      Logout
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item class="options">Item 1</button>
+      <button mat-menu-item class="options">Item 2</button>
+    </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
-
-
-
-
-
-

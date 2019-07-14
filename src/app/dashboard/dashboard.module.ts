@@ -8,25 +8,20 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-import { MainnavComponent } from '../shared/mainnav/mainnav.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AdminDashboardComponent,
-    UserDashboardComponent,
-    MainnavComponent
-  ],
+  declarations: [AdminDashboardComponent, UserDashboardComponent],
   imports: [
     CommonModule,
+    SharedModule,
     NgbModalModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
     }),
     NgbModalModule.forRoot(),
-    Ng2SearchPipeModule,
-    SharedModule
+    Ng2SearchPipeModule
   ]
 })
 export class DashboardModule {}
