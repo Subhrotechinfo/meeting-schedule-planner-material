@@ -2,8 +2,8 @@
 <div class="container-fluid row">
   <app-user-list class="col-sm-3"></app-user-list>
   <div class="cal-container col-sm-9">
-    <div class="row text-center">
-      <div class="col-md-4">
+    <div class="row text-center mt-2">
+      <div class="col-md-3">
         <div class="btn-group">
           <div
             class="btn btn-primary"
@@ -12,7 +12,7 @@
             [(viewDate)]="viewDate"
             (viewDateChange)="closeOpenMonthViewDay()"
           >
-            Previous
+            <i class="fa fa-angle-left"></i>
           </div>
           <div
             class="btn btn-outline-secondary"
@@ -28,22 +28,28 @@
             [(viewDate)]="viewDate"
             (viewDateChange)="closeOpenMonthViewDay()"
           >
-            Next
+            <i class="fa fa-angle-right"></i>
           </div>
         </div>
       </div>
       <div class="col-md-4">
         <h3>{{ viewDate | calendarDate: view + 'ViewTitle':'en' }}</h3>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-2">
         <div class="btn-group">
-          <div
+          <select (change)="setView($event)" class="dropdown">
+            <option value="Month">Month</option>
+            <option value="Week">Week</option>
+            <option value="Day">Day</option>
+          </select>
+          <!-- <div
             class="btn btn-primary"
             (click)="setView(CalendarView.Month)"
             [class.active]="view === CalendarView.Month"
           >
             Month
           </div>
+
           <div
             class="btn btn-primary"
             (click)="setView(CalendarView.Week)"
@@ -57,12 +63,20 @@
             [class.active]="view === CalendarView.Day"
           >
             Day
-          </div>
+          </div> -->
         </div>
       </div>
+      <div class="col-md-3">
+        <h3>
+          <button class="btn btn-primary pull-right" (click)="addEvent()">
+            Add new event
+          </button>
+          <div class="clearfix"></div>
+        </h3>
+      </div>
     </div>
-
     <br />
+
     <div [ngSwitch]="view">
       <mwl-calendar-month-view
         *ngSwitchCase="CalendarView.Month"
@@ -98,13 +112,13 @@
     <!-- Everything you see below is just for the demo, you don't need to include it in your app -->
 
     <br /><br /><br />
-    <h3>
+    <!-- <h3>
       Edit events
       <button class="btn btn-primary pull-right" (click)="addEvent()">
         Add new
       </button>
       <div class="clearfix"></div>
-    </h3>
+    </h3> -->
 
     <!-- <div class="table-responsive">
     <table class="table table-bordered">

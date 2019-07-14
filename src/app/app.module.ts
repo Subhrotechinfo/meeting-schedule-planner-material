@@ -36,6 +36,7 @@ import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashb
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { UserListComponent } from './dashboard/admin-dashboard/user-list/user-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddMeetingComponent } from './meeting/add-meeting/add-meeting.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { HttpClientModule } from '@angular/common/http';
     UserDashboardComponent,
     AdminDashboardComponent,
     PagenotfoundComponent,
-    UserListComponent
+    UserListComponent,
+    AddMeetingComponent
   ],
   imports: [
     BrowserModule,

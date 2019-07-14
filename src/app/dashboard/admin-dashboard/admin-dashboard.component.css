@@ -13,3 +13,10 @@ pre {
 .color {
   color: black;
 }
+.dropdown {
+  padding: 0.375rem 0.75rem;
+  background: white;
+  border: none;
+  box-shadow: 0 0 1px;
+  border-radius: 2px;
+}
