@@ -1,12 +1,19 @@
+import { AppService } from './app-service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+
 import { LoginFormComponent } from './login-form/login-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+
+
 import { SignupComponent } from './signup/signup.component';
 
 import { AppRouterModule } from './app-routing.module';
@@ -75,8 +82,10 @@ import { HttpClientModule } from '@angular/common/http';
       useFactory: adapterFactory
     })
   ],
+
   exports: [SharedModule],
   providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
