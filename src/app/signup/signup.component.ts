@@ -1,3 +1,4 @@
+import { AppService } from './../app-service.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
@@ -12,9 +13,12 @@ export class SignupComponent implements OnInit {
   parts:FormGroup;
   checked;
   
-  constructor() { }
+  constructor(private service: AppService) { }
 
   ngOnInit() {
+    // this.service.signup().subscribe((res)=>{
+    //   console.log(res);
+    // })
   }
 
 }

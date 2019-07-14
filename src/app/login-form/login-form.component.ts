@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { AppService } from './../app-service.service';
 
 @Component({
   selector: 'app-login-form',
@@ -11,6 +11,7 @@ export class LoginFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // console.log(this.service.signup());
   }
 
 }
