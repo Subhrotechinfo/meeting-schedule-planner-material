@@ -6,13 +6,17 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 // import { FlatpickrModule } from 'angularx-flatpickr';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { MainnavComponent } from '../shared/mainnav/mainnav.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [AdminDashboardComponent, UserDashboardComponent, MainnavComponent],
+  declarations: [
+    AdminDashboardComponent,
+    UserDashboardComponent,
+    MainnavComponent
+  ],
   imports: [
     CommonModule,
     NgbModalModule,
@@ -24,8 +28,5 @@ import { SharedModule } from '../shared/shared.module';
     Ng2SearchPipeModule,
     SharedModule
   ]
-  
 })
-export class DashboardModule { }
-
-
+export class DashboardModule {}
