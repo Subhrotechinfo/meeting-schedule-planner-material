@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/angular-calendar/css/angular-calendar.css';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~ng-pick-datetime/assets/style/picker.min.css';
 body {
   /* margin: 0; */
   /* background-color:#0d0d0d; */
@@ -28,21 +29,7 @@ body {
 .status-inactive {
   color: rgb(192, 47, 21);
 }
-.title {
-  padding: 20px;
-  background: #658298;
-  text-align: center;
-}
-.user {
-  padding: 12px;
-  background: white;
-  border: 1px solid #d0bebe;
-  cursor: pointer;
-}
-.user:hover {
-  background: #585050;
-  color: white;
-}
+
 input[type='text'] {
   width: 100%;
 }
