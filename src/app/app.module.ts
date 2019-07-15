@@ -41,6 +41,7 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppService } from './app-service.service';
+import { MustMatchDirective } from './directives/must-match.directive';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AppService } from './app-service.service';
     SignupComponent,
     UserDashboardComponent,
     AdminDashboardComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    MustMatchDirective
   ],
   imports: [
     BrowserModule,
