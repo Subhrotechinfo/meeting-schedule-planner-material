@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AppService {
-
-  baseUrl: String= 'http://localhost:8080';
+  Aws :String = "13.235.166.206";
+  baseUrl: String= 'http://13.235.166.206:8080';
   constructor(private _http: HttpClient) { }
 
   // get all countries using api
