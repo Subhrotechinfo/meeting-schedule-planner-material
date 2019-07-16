@@ -10,17 +10,17 @@ export class AppService {
   constructor(private _http: HttpClient) { }
 
   // get all countries using api
-  public getCountriesListApi(){
-       return this._http.get(`https://api.printful.com/countries`);
-  }
-  
-  public signup(signUpData){
-    // const params = 
-    console.log(signUpData);
-    return this._http.post(`${this.baseUrl}/signup`,signUpData);
+  public getCountriesListApi() {
+    return this._http.get(`https://api.printful.com/countries`);
   }
 
-  public login(loginData){
+  public signup(signUpData) {
+    // const params = 
+    console.log(signUpData);
+    return this._http.post(`${this.baseUrl}/signup`, signUpData);
+  }
+
+  public login(loginData) {
     console.log(loginData);
     return this._http.post(`${this.baseUrl}/login`, loginData);
   }
@@ -28,4 +28,3 @@ export class AppService {
 
 
 }
-
