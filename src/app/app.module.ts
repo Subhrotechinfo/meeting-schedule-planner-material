@@ -1,4 +1,3 @@
-import { UserListComponent } from './shared/user-list-bar/user-list-bar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -40,7 +39,6 @@ import { MeetingModule } from './meeting/meeting.module';
 import { SharedModule } from './shared/shared.module';
 
 import { HttpClientModule } from '@angular/common/http';
-import { AddMeetingComponent } from './meeting/add-meeting/add-meeting.component';
 
 import { AppService } from './app-service.service';
 import { MustMatchDirective } from './directives/must-match.directive';
@@ -53,8 +51,6 @@ import { MustMatchDirective } from './directives/must-match.directive';
     UserDashboardComponent,
     AdminDashboardComponent,
     PagenotfoundComponent,
-    UserListComponent,
-    AddMeetingComponent,
     MustMatchDirective
   ],
   imports: [
