@@ -1,4 +1,4 @@
-<div class="title mt-3">Users</div>
+<div class="title">Users</div>
 <ng-container *ngIf="users.length > 0">
   <div class="user-div container-fluid">
     <div class="user mt-1 row" *ngFor="let user of users">
@@ -10,8 +10,9 @@
           'status-active': user.status === 1,
           'status-inactive': user.status === -1
         }"
+        [title]="user.status === 1 ? 'active' : 'inactive'"
       >
-        <i class="fa fa-circle"></i>
+        <i class="fa fa-circle status"></i>
       </div>
     </div>
   </div>

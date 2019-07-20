@@ -1,12 +1,15 @@
+import { UserListComponent } from './shared/user-list-bar/user-list-bar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+
 import { LoginFormComponent } from './login-form/login-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+
 import { SignupComponent } from './signup/signup.component';
 
 import { AppRouterModule } from './app-routing.module';
@@ -22,9 +25,7 @@ import {
 } from '@angular/material';
 import { MatMenuModule } from '@angular/material/menu';
 
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { FooterComponent } from './footer/footer.component';
-import { MainnavComponent } from './mainnav/mainnav.component';
+import { ReactiveFormsModule, FormsModule, NgControl } from '@angular/forms';
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { FlatpickrModule } from 'angularx-flatpickr';
@@ -34,30 +35,37 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboard.component';
 import { AdminDashboardComponent } from './dashboard/admin-dashboard/admin-dashboard.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { UserListComponent } from './dashboard/admin-dashboard/user-list/user-list.component';
+import { MeetingModule } from './meeting/meeting.module';
+
+import { SharedModule } from './shared/shared.module';
+
 import { HttpClientModule } from '@angular/common/http';
 import { AddMeetingComponent } from './meeting/add-meeting/add-meeting.component';
+
+import { AppService } from './app-service.service';
+import { MustMatchDirective } from './directives/must-match.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
     SignupComponent,
-    FooterComponent,
-    MainnavComponent,
     UserDashboardComponent,
     AdminDashboardComponent,
     PagenotfoundComponent,
     UserListComponent,
-    AddMeetingComponent
+    AddMeetingComponent,
+    MustMatchDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRouterModule,
-    BrowserAnimationsModule,
+    MeetingModule,
+    SharedModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
     MatFormFieldModule,
@@ -77,7 +85,8 @@ import { AddMeetingComponent } from './meeting/add-meeting/add-meeting.component
       useFactory: adapterFactory
     })
   ],
-  providers: [],
+  exports: [SharedModule],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
