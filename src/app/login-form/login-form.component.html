@@ -2,17 +2,22 @@
   <div class="container">
     <div class="col-sm-12 col-md-8 col-lg-6 mx-auto loginbox">
       <mat-card>
-        <div class="text-center">Logo</div>
+        <div class="text-center">
+          <h3>{{pageTitle}}</h3>
+        </div>
         <div>
           <form [formGroup]="loginForm" (submit)="onLogin()">
             <div class="form-group">
               <mat-form-field class="field">
-                <input matInput type="text" placeholder="Email" formControlName="emailId">
+                <input matInput type="text" placeholder="Email" formControlName="emailId" required>
+                <mat-error *ngIf="controls.emailId.hasError('required')"> Please enter an Email </mat-error>
+                <mat-error *ngIf="controls.emailId.hasError('email')"> Please enter a valid Email </mat-error>
               </mat-form-field>
             </div>
             <div class="form-group">
               <mat-form-field class="field">
-                <input matInput type="text" placeholder="Password" formControlName="password">
+                <input matInput type="password" placeholder="Password" formControlName="password" required>
+                <mat-error *ngIf="controls.password.hasError('required')"> Please enter an Password </mat-error>
               </mat-form-field>
             </div>
             <div class="form-group">

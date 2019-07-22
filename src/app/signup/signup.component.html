@@ -4,104 +4,51 @@
       <form [formGroup]="signUpForm" (submit)="saveSignUp()">
         <div class="form-group">
           <mat-form-field class="field">
-            <input
-              matInput
-              placeholder="Full Name"
-              type="text"
-              formControlName="fullName"
-            />
-            <mat-error *ngIf="controls.fullName.hasError('required')">
-              Please enter an Name
-            </mat-error>
+            <input matInput placeholder="Full Name" type="text" formControlName="fullName" />
+            <mat-error *ngIf="controls.fullName.hasError('required')"> Please enter an Name </mat-error>
           </mat-form-field>
         </div>
         <div class="form-group">
           <mat-form-field class="field">
-            <input
-              matInput
-              placeholder="Email id"
-              type="email"
-              formControlName="emailId"
-              [errorStateMatcher]="Matcher"
-            />
-            <mat-error *ngIf="controls.emailId.hasError('required')">
-              Please enter an email id
-            </mat-error>
-            <mat-error
-              *ngIf="
+            <input matInput placeholder="Email id" type="email" formControlName="emailId"
+              [errorStateMatcher]="Matcher" />
+            <mat-error *ngIf="controls.emailId.hasError('required')"> Please enter an email id </mat-error>
+            <mat-error *ngIf="
                 !controls.emailId.hasError('required') &&
                 controls.emailId.hasError('email')
-              "
-            >
-              Enter valid email</mat-error
-            >
+              "> Enter valid email</mat-error>
           </mat-form-field>
         </div>
         <div class="form-group">
           <mat-form-field class="field">
-            <input
-              matInput
-              placeholder="Username"
-              type="text"
-              formControlName="userName"
-            />
-            <mat-error *ngIf="controls.userName.hasError('required')">
-              Please enter an Username
-            </mat-error>
-            <mat-error
-              *ngIf="
+            <input matInput placeholder="Username" type="text" formControlName="userName" />
+            <mat-error *ngIf="controls.userName.hasError('required')"> Please enter an Username </mat-error>
+            <mat-error *ngIf="
                 !controls.userName.hasError('required') &&
                 controls.userName.hasError('pattern')
-              "
-            >
-              Enter Valid User Name
-            </mat-error>
+              "> Enter Valid User Name </mat-error>
           </mat-form-field>
         </div>
         <div class="form-group">
           <mat-form-field class="field">
-            <input
-              matInput
-              placeholder="Enter your password"
-              type="password"
-              formControlName="password"
-            />
-            <mat-error *ngIf="controls.password.hasError('required')">
-              Please enter an Password
-            </mat-error>
-            <mat-error
-              *ngIf="
+            <input matInput placeholder="Enter your password" type="password" formControlName="password" />
+            <mat-error *ngIf="controls.password.hasError('required')"> Please enter an Password </mat-error>
+            <mat-error *ngIf="
                 !controls.password.hasError('required') &&
                 controls.password.hasError('minlength')
-              "
-            >
-              Password min length should be 8
-            </mat-error>
+              "> Password min length should be 8 </mat-error>
             <!-- <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'false' : 'true'}}</mat-icon> -->
           </mat-form-field>
         </div>
         <div class="form-group">
           <mat-form-field class="field">
-            <input
-              matInput
-              placeholder="Confirm password"
-              type="password"
-              formControlName="confirmpassword"
-            />
-            <mat-error *ngIf="controls.confirmpassword.hasError('required')">
-              Please Confirm Password
-            </mat-error>
-            <mat-error
-              *ngIf="
+            <input matInput placeholder="Confirm password" type="password" formControlName="confirmpassword" />
+            <mat-error *ngIf="controls.confirmpassword.hasError('required')"> Please Confirm Password </mat-error>
+            <mat-error *ngIf="
                 !controls.confirmpassword.hasError('required') &&
                 controls.confirmpassword.hasError('minlength')
-              "
-            >
-              Confirm Password min length should be 8
-            </mat-error>
-            <mat-error *ngIf="controls.confirmpassword.hasError('mustMatch')">
-              Password does not match
-            </mat-error>
+              "> Confirm Password min length should be 8 </mat-error>
+            <mat-error *ngIf="controls.confirmpassword.hasError('mustMatch')"> Password does not match </mat-error>
             <!-- <mat-icon matSuffix (click)="hide = !hide">{{ hide ? 'false' : 'true'}}</mat-icon> -->
             <!-- <mat-error *ngIf="signUpForm.passwordMatch">Passwords must match</mat-error> -->
           </mat-form-field>
@@ -111,36 +58,22 @@
             <mat-label>Country</mat-label>
             <mat-select formControlName="country">
               <mat-option>None</mat-option>
-              <mat-option [value]="country" *ngFor="let country of countries">{{
-                country
+              <mat-option [value]="country" *ngFor="let country of countries">{{ country
               }}</mat-option>
             </mat-select>
-            <mat-error *ngIf="controls.country.hasError('required')">
-              Select country
-            </mat-error>
+            <mat-error *ngIf="controls.country.hasError('required')"> Select country </mat-error>
           </mat-form-field>
         </div>
         <div class="form-group">
           <mat-form-field class="field">
             <span matPrefix>+91 &nbsp;</span>
-            <input
-              type="tel"
-              matInput
-              placeholder="Phone"
-              formControlName="mobileno"
-            />
-            <mat-error *ngIf="controls.mobileno.hasError('required')">
-              Please enter mobile number</mat-error
-            >
-            <mat-error
-              *ngIf="
+            <input type="tel" matInput placeholder="Phone" formControlName="mobileno" />
+            <mat-error *ngIf="controls.mobileno.hasError('required')"> Please enter mobile number</mat-error>
+            <mat-error *ngIf="
                 (!controls.mobileno.hasError('required') &&
                   controls.mobileno.hasError('minlength')) ||
                 controls.mobileno.hasError('maxlength')
-              "
-            >
-              Min-Max 10 digits</mat-error
-            >
+              "> Min-Max 10 digits</mat-error>
             <!-- <mat-icon matSuffix>mode_edit</mat-icon> -->
           </mat-form-field>
         </div>
@@ -149,13 +82,10 @@
             <mat-label>Role</mat-label>
             <mat-select formControlName="role">
               <mat-option>None</mat-option>
-              <mat-option [value]="role" *ngFor="let role of roles">{{
-                role
+              <mat-option [value]="role" *ngFor="let role of roles">{{ role
               }}</mat-option>
             </mat-select>
-            <mat-error *ngIf="controls.role.hasError('required')"
-              >Select role</mat-error
-            >
+            <mat-error *ngIf="controls.role.hasError('required')">Select role</mat-error>
           </mat-form-field>
         </div>
         <button mat-raised-button color="primary" type="submit">Signup</button>
