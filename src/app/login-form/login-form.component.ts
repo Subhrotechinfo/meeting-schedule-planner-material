@@ -11,6 +11,7 @@ import { AuthUserService } from '../service/auth-user.service';
 export class LoginFormComponent implements OnInit {
   pageTitle = 'Log In'
   loginForm: FormGroup;
+  submitted: boolean = false;
   constructor(private fb: FormBuilder, private service: AppService, private authUserService: AuthUserService) {
 
     this.loginForm = this.fb.group({
@@ -23,10 +24,12 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() { }
 
   onLogin() {
+    this.submitted = true;
     if (this.loginForm.invalid) {
       return;
     }
     this.authUserService.isAuthenticated(this.loginForm.value);
+
     // delete this.loginForm.value.remember;
     // this.service.login(this.loginForm.value).subscribe((res) => {
     //   console.log(res);

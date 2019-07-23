@@ -47,11 +47,31 @@ describe('LoginFormComponent', () => {
   it('Page title should be Log In', async(() => {
     expect(component.pageTitle).toEqual('Log In');
   }))
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+
   it('should touched control', () => {
     // component.loginForm.controls['email'].
     expect(component).toBeTruthy();
   });
+  it('is email valid', async(() => {
+    let email = component.loginForm.controls['emailId'];
+    email.setValue('abc@gmail.com');
+    expect(email.valid).toBeTruthy();
+  }))
+  it('is form valid when empty', async(() => {
+    let email = component.loginForm.controls['emailId'];
+    email.setValue('abc@gmail.com');
+    let password = component.loginForm.controls['password'];
+    password.setValue('12345678');
+    expect(component.loginForm.valid).toBeTruthy();
+  }));
+
+  it('is form valid when submitted', async(() => {
+    let email = component.loginForm.controls['emailId'];
+    email.setValue('abc@gmail.com');
+    let password = component.loginForm.controls['password'];
+    password.setValue('12345678');
+    component.submitted = true;
+    expect(component.submitted).toBeTruthy();
+    expect(component.loginForm.valid).toBeTruthy();
+  }))
 });
