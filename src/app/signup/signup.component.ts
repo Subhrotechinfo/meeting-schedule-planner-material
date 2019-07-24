@@ -32,6 +32,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  title = 'Register User'
   hide = true;
   parts: FormGroup;
   checked;
@@ -81,7 +82,7 @@ export class SignupComponent implements OnInit {
     );
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
   saveSignUp() {
     if (this.signUpForm.invalid) {
       console.log(this.controls);

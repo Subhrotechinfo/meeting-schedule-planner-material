@@ -2,7 +2,8 @@ import {
   Component,
   ChangeDetectionStrategy,
   ViewChild,
-  TemplateRef
+  TemplateRef,
+  OnInit
 } from '@angular/core';
 import {
   startOfDay,
@@ -44,7 +45,7 @@ const colors: any = {
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./admin-dashboard.component.css']
 })
-export class AdminDashboardComponent {
+export class AdminDashboardComponent implements OnInit {
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
 
   view: CalendarView = CalendarView.Month;
@@ -61,6 +62,7 @@ export class AdminDashboardComponent {
   actions: CalendarEventAction[] = [
     {
       label: '<i class="fa fa-fw fa-pencil"></i>',
+      cssClass: 'color',
       onClick: ({ event }: { event: CalendarEvent }): void => {
         this.handleEvent('Edited', event);
       }
@@ -78,8 +80,8 @@ export class AdminDashboardComponent {
 
   events: CalendarEvent[] = [
     {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
+      start: subDays(new Date(), 1),
+      end: addDays(new Date(), 2),
       title: 'A 3 day event',
       color: colors.red,
       actions: this.actions,
@@ -88,7 +90,7 @@ export class AdminDashboardComponent {
         beforeStart: true,
         afterEnd: true
       },
-      draggable: true
+      draggable: false
     },
     {
       start: startOfDay(new Date()),
@@ -101,7 +103,7 @@ export class AdminDashboardComponent {
       end: addDays(endOfMonth(new Date()), 3),
       title: 'A long event that spans 2 months',
       color: colors.blue,
-      allDay: true
+      allDay: false
     },
     {
       start: addHours(startOfDay(new Date()), 2),
@@ -113,13 +115,16 @@ export class AdminDashboardComponent {
         beforeStart: true,
         afterEnd: true
       },
-      draggable: true
+      draggable: false
     }
   ];
 
   activeDayIsOpen = true;
 
   constructor(private modal: NgbModal) {}
+  ngOnInit() {
+    console.log(this.events[0].end);
+  }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -166,7 +171,7 @@ export class AdminDashboardComponent {
         start: startOfDay(new Date()),
         end: endOfDay(new Date()),
         color: colors.red,
-        draggable: true,
+        draggable: false,
         resizable: {
           beforeStart: true,
           afterEnd: true
@@ -179,8 +184,18 @@ export class AdminDashboardComponent {
     this.events = this.events.filter((event) => event !== eventToDelete);
   }
 
-  setView(view: CalendarView) {
-    this.view = view;
+  setView(view) {
+    switch (view.target.value) {
+      case 'Month':
+        this.view = CalendarView.Month;
+        break;
+      case 'Week':
+        this.view = CalendarView.Week;
+        break;
+      case 'Day':
+        this.view = CalendarView.Day;
+        break;
+    }
   }
 
   closeOpenMonthViewDay() {

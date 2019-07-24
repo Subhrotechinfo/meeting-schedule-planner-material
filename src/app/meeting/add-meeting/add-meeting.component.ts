@@ -9,7 +9,6 @@ export class AddMeetingComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

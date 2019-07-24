@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 
 import { SignupComponent } from './signup/signup.component';
@@ -85,4 +85,4 @@ import { MustMatchDirective } from './directives/must-match.directive';
   providers: [AppService],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
